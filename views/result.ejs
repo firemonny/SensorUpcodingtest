@@ -1,7 +1,12 @@
 <% include partials/header.ejs %>
-    <div class="container">
-        <h1 font-weight= 500 style="text-align: center;">My daily servings</h1>
-         <div style="width: 50%; margin: 40px auto; ">
+<div class="container">
+    <h1 font-weight= 500 style="text-align: center;">My daily servings</h1>
+     <div style="width: 50%; margin: 40px auto;">
+             <p>
+                     <a class="btn btn-danger" href="/"> Go back to the index page</a>
+                     <spam></spam>
+                     <input type="button" class="btn btn-success" value="Get New List" onClick="window.location.reload()">
+            </p>
             <p>
             <ul class="list-group">
                 <li class="list-group-item list-group-item-warning"><strong>Gender: <%= person_data.gender%></strong></li>
@@ -18,7 +23,7 @@
             </p>
             <p>
                 <ul class="list-group">
-                    <li class="list-group-item list-group-item-info"><strong>Grains - <%= person_data.gr.servings %> servings</strong></li>
+                    <li class="list-group-item list-group-item-info"><strong>Grains - <%= person_data.gr.servings %>servings</strong></li>
                     <% person_data.gr.food.forEach(function(gr){ %>
                     <li class="list-group-item list-group-item-success"><%= gr.name%>  <%-gr.srvg_sz%></li>
                     <% }); %>
@@ -40,12 +45,9 @@
                     <% }); %>
                 </ul>
             </p>
-            <p>
-                <a class="btn btn-danger" href="/"> Go back to the index page</a>
-                <input type="button" class="btn btn-success" value="Get New List" onClick="window.location.reload()">
-            </p>
-        </div>
     </div>
+</div>
+
 <% include partials/footer.ejs %>
 
 
