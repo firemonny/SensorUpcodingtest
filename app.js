@@ -3,8 +3,9 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/codetest");
-
+mongoose.connect("mongodb://monny:qwer1234@ds117858.mlab.com:17858/foodindex");
+//mongodb://monny:qwer1234@ds117858.mlab.com:17858/foodindex
+//mongodb://localhost/codetest
 // Data structure declartion
 var directiondata =new mongoose.Schema({
     fgid: String,
