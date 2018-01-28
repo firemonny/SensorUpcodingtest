@@ -1,0 +1,51 @@
+<% include partials/header.ejs %>
+    <div class="container">
+        <h1 font-weight= 500 style="text-align: center;">My daily servings</h1>
+         <div style="width: 50%; margin: 40px auto; ">
+            <p>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-warning"><strong>Gender: <%= person_data.gender%></strong></li>
+                <li class="list-group-item list-group-item-warning"><strong>Age Range: <%= person_data.age%></strong></li>
+            </ul>
+            </p>
+            <p>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info"><strong>Vegetables and Fruit - <%= person_data.vf.servings %> servings</strong></li>
+                    <% person_data.vf.food.forEach(function(vf){ %>
+                    <li class="list-group-item list-group-item-success"><%= vf.name%>  <%-vf.srvg_sz%></li>
+                    <% }); %>
+                </ul>
+            </p>
+            <p>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info"><strong>Grains - <%= person_data.gr.servings %> servings</strong></li>
+                    <% person_data.gr.food.forEach(function(gr){ %>
+                    <li class="list-group-item list-group-item-success"><%= gr.name%>  <%-gr.srvg_sz%></li>
+                    <% }); %>
+                </ul>
+            </p>
+            <p>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info"><strong>Milk and Alternatives - <%= person_data.da.servings %> servings</strong></li>
+                    <% person_data.da.food.forEach(function(da){ %>
+                    <li class="list-group-item list-group-item-success"><%= da.name%>  <%-da.srvg_sz%></li>
+                    <% }); %>
+                </ul>
+            </p>
+            <p>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info"><strong>Meat and Alternatives - <%= person_data.me.servings %> servings</strong></li>
+                    <% person_data.me.food.forEach(function(me){ %>
+                    <li class="list-group-item list-group-item-success"><%= me.name%>  <%-me.srvg_sz%></li>
+                    <% }); %>
+                </ul>
+            </p>
+            <p>
+                <a class="btn btn-danger" href="/"> Go back to the index page</a>
+                <input type="button" class="btn btn-success" value="Get New List" onClick="window.location.reload()">
+            </p>
+        </div>
+    </div>
+<% include partials/footer.ejs %>
+
+

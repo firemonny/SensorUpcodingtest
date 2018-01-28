@@ -1,0 +1,34 @@
+<% include partials/header.ejs %>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 style="text-align: center;">My Food Guide</h1>
+                <div style="width: 30%; margin: 40px auto; ">
+                    <form action="/result" method="POST">
+                    <!--By fefault Male is checked to avoid the incorrect data-->
+                        <div class="form-group">
+                            <label class="form-check-label" for="male">Male:</label>
+                            <input class="form-check-input" id="male"  name="result[gender]"checked="checked" type="radio" value="Male">
+                            <label class="form-check-label" for="female">Female:</label>
+                            <input class="form-check-input" id="female"  name="result[gender]" type="radio" value="Female">
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Please select your age:</label>
+                            <select class="form-control" name="result[age]" id="age">
+                            <option value="4 to 8">4 to 8</option>
+                            <option value="9 to 13">9 to 13</option>
+                            <option value="14 to 18">14 to 18</option>
+                            <option value="19 to 30">19 to 30</option>
+                            <option value="31 to 50">31 to 50</option>
+                            <option value="51 to 70">51 to 70</option>
+                            <option value="71+">71+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary" type="Submit">Check Result</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<% include partials/footer.ejs %>
