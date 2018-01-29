@@ -5,7 +5,13 @@
              <p>
                      <a class="btn btn-danger" href="/"> Go back to the index page</a>
                      <spam></spam>
-                     <input type="button" class="btn btn-success" value="Get New List" onClick="window.location.reload()">
+                      <form action="/result" method="POST">
+                            <input name="result[gender]" type="hidden" value="<%= person_data.gender%>">
+                            <input name="result[age]" type="hidden" value ="<%= person_data.age%>">
+                        <div class="form-group">
+                            <button class="btn btn-success" type="Submit">Get New List</button>
+                        </div>
+                    </form>
             </p>
             <p>
             <ul class="list-group">
@@ -51,3 +57,4 @@
 <% include partials/footer.ejs %>
 
 
+                   
